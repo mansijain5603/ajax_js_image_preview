@@ -1,0 +1,12 @@
+
+
+  <p><%= @student.first_name %></p> 
+  <% if @student.images.attached? %> 
+    <% @student.images.each do |image| %>
+     <%= image_tag image %>
+    <% end %>
+  <% end %>
+	<%= link_to "Edit", edit_student_path(@student) %>
+	<%= link_to "Destroy",student_path(@student),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
